@@ -7,7 +7,6 @@
     <div class="row">
 
       <div class=" table-card">
-        <!--  <a href="{{url}}">       -->
         <div class="left-image" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"
           data-href="{{url}}">
           <div class="disqus-container">
@@ -56,7 +55,6 @@
               <small class="text-muted">{{date format='MMM DD,YYYY'}}</small>
             </p>
           </div>
-          <!--   </a>  -->
         </div>
 
       </div>
@@ -73,16 +71,7 @@
 {{#get "posts" filter="featured:false" include="author,tags" limit=13 page=1}}
 <div class="main-container col-xs-12">
   {{#foreach posts}}
-
-  <div class="card col-xs-12 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0" data-file="{{id}}" data-url={{url}} data-target="section">
-
-    <div class="row">
-      {{> card-block}}
-    </div>
-
-  </div>
-
-
+    {{> table-card}}
   {{/foreach}}
 
 </div>
