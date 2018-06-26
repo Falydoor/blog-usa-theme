@@ -19,12 +19,12 @@
         <form class="recommend_form col-xs-3" data-statut="0"><button  class="col-xs-12 white_icon"></button></form>
       </div>
       </div>
-         <div class="card-block" onclick="redirect({{url}})" title="{{{title}}}">
+         <div class="card-block" title="{{{title}}}">
 
            <div class="col-xs-12">
-           <h2 class="card-title col-xs-12">{{{title}}} </h2>
+           <h2 class="card-title col-xs-12"><a href="{{url}}"></a>{{{title}}}</a></h2>
           </div>
-           <p class="card-text card-text-latest">{{excerpt words=15}}… <br /><a href="{{url}}" onclick="redirect({{url}})" class="disabledLink_p">Read More</a>
+           <p class="card-text card-text-latest">{{excerpt words=15}}… <br /><a href="{{url}}">Read More</a>
            </p>
            <hr />
       
