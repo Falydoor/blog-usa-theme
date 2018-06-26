@@ -1,4 +1,4 @@
- {{#get "posts" filter="featured:true" include="author,tags"}}
+{{#get "posts" filter="featured:true" include="author,tags"}}
 <div class="main-container col-xs-12">
   {{#foreach posts from="4" to="5"}}
 
@@ -71,7 +71,7 @@
 {{#get "posts" filter="featured:false" include="author,tags" limit=13 page=1}}
 <div class="main-container col-xs-12">
   {{#foreach posts}}
-    {{> table-card}}
+    {{> post-horizontal-card}}
   {{/foreach}}
 
 </div>
