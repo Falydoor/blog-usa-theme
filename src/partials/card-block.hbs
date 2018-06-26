@@ -1,0 +1,50 @@
+<div class="table-card">
+    <div class="left-image lazy" title="{{{title}}}" data-original="{{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}"
+        style="background-repeat: no-repeat; background-position: center; background-size: cover;" data-href="{{url}}">
+        <div class="disqus-container">
+            <a href="{{url}}#disqus_thread" class="number_com col-xs-9"></a>
+            <form class="recommend_form col-xs-3" data-statut="0">
+                <button class="col-xs-12 white_icon"></button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card-block" title="{{{title}}}">
+        <div class="col-xs-12">
+            <a href="{{url}}">
+                <h2 class="card-title col-xs-12">{{{title}}} </h2>
+            </a>
+        </div>
+        <p class="card-text card-text-latest">{{excerpt words=15}}…
+            <br />
+            <a href="{{url}}">Read More</a>
+        </p>
+
+        <hr />
+
+        <div class="col-xs-7 col-md-8 dp_margin_b author-block">
+            {{#author}}
+            <a href="{{url}}">
+                <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}assets/images/default-avatar.png{{/if}}" alt="{{name}}" class="pull-left img-author img-circle">
+            </a>
+            <p class="card-text card-text-latest">
+                <a href="{{url}}" class="nom_auteur">{{name}}</a>
+            </p>
+            {{/author}}
+            <span class="tags_container">
+
+
+                {{#if tags}}
+                <i class="icon-label"></i>
+                <h1>{{tags limit=1}}</h1>
+                {{/if}}
+            </span>
+        </div>
+        <div class="col-xs-5 col-md-4 dp_margin_b read-info">
+            <p class="text-xs-right eta col-xs-12 pull-xs-right time_reading"></p>
+            <p class="text-xs-right card-text card-text-latest col-xs-12 pull-xs-right">
+                <small class="text-muted">{{date format='MMM DD,YYYY'}}</small>
+            </p>
+        </div>
+    </div>
+</div>
