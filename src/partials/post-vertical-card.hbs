@@ -1,7 +1,7 @@
-<div class="card col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0" data-file="{{id}}" data-url={{url}} data-target="section">
+<div class="card col-xs-12 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0" data-file="{{id}}" data-url={{url}} data-target="section">
   <div class="row">
     <div class="table-card">
-      <div class="left-image lazy" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"
+      <div class="left-image" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"
         data-href="{{url}}">
         <div class="disqus-container">
           <a href="{{url}}#disqus_thread" class="number_com col-xs-9"></a>
@@ -12,9 +12,12 @@
       </div>
 
       <div class="card-block" title="{{{title}}}">
+        <div class="featured_home">
+          <i class="fa fa-star"></i>Featured
+        </div>
         <div class="col-xs-12">
           <a href="{{url}}">
-            <h2 class="card-title col-xs-12">{{{title}}}</h2>
+            <h1 class="card-title col-xs-12">{{{title}}}</h1>
           </a>
         </div>
         <p class="card-text card-text-latest">{{excerpt words=15}}…

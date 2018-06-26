@@ -2,34 +2,30 @@
 {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
 <!-- start main content area -->
-{{!-- <div class="container"> --}}
-	<!-- start big margin -->
 
+<!-- start big margin -->
 <div class="container featured-container-primary">
-		<h4 class="h5 title_home col-xs-6 col-sm-offset-2 col-md-offset-0"><span>FEATURED </span> ARTICLES</h4>
+	<h4 class="h5 title_home col-xs-6 col-sm-offset-2 col-md-offset-0"><span>FEATURED</span> ARTICLES</h4>
 	<div class="featured-container">
-	<div class="main-feautred col-xs-12 col-md-12 wow fadeInUp" data-wow-duration="1s">
-		{{>featured_articles}}
-	</div>
+    <div class="main-feautred col-xs-12 col-md-12 wow fadeInUp" data-wow-duration="1s">
+      {{>featured_articles}}
+    </div>
+  </div>
 </div>
-</div>
-	<!-- end big margin -->
+<!-- end big margin -->
 	
-	<div class="container">
-		<div class="col-md-8 col-xs-12 last-article-container wow fadeInLeft" data-wow-duration="1s">
-		<h4 class="h5 title_home col-xs-6 col-sm-offset-2 col-md-offset-0"><span>LATEST </span> ARTICLES</h4>
-			{{!-- <div  id ="category-container"> --}}
-				<div class="last-container">
-				<div class="main-last col-xs-12">
-					{{>recent-post-home}}
-				</div>
-			</div>
-			{{!-- </div> --}}
-			 <div class="col-xs-12">
-{{pagination}}
+<div class="container">
+  <div class="col-md-8 col-xs-12 last-article-container wow fadeInLeft" data-wow-duration="1s">
+    <h4 class="h5 title_home col-xs-6 col-sm-offset-2 col-md-offset-0"><span>LATEST</span> ARTICLES</h4>
+    <div class="last-container">
+      <div class="main-last col-xs-12">
+        {{>recent-post-home}}
+      </div>
+    </div>
+    <div class="col-xs-12">
+      {{pagination}}
+    </div>
+  </div>
+  {{> sidebar_home}}
 </div>
-		</div>
-		{{> sidebar_home}}
-	</div>
-{{!-- </div> --}}
 <!-- end main content area -->
