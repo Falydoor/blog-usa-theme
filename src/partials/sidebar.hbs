@@ -1,0 +1,20 @@
+<aside class="col-md-4 slidebar_home wow fadeInLeft" data-wow-duration="1s">
+	<div class="sidebar">
+		{{#author}}
+			{{#if website}}
+				<div class="widget">
+				<h4 class="h5 title"><span>Linked</span>IN</h4>
+				<div class="content">
+				{{> widget-linkedin_auteur}}
+				</div>
+				</div>
+			{{/if}}
+		{{/author}}
+		{{!-- {{> widget-tagcloud}} --}}
+		{{> widget-ad}}
+		{{> widget-recentpost}}
+		{{> widget-facebook}}
+		{{> widget-twitter}}
+		{{> widget-newsletter}}
+		</div>
+</aside>

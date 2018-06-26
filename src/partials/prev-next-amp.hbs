@@ -1,0 +1,20 @@
+<div class="col-sm-12">
+	<div class="prev-next-wrap clearfix">
+		{{#next_post}}
+		<a rel="amphtml" class="previous-post pull-left {{#if feature_image}}prevBackground {{/if}}"  href="{{url}}amp">
+			<div class="prev-next-inner">
+				<span class="link-text">Previous Post</span>
+				<h3 class="title h4">{{title}}</h3>
+			</div>
+		</a>
+		{{/next_post}}
+	    {{#prev_post}}
+	    <a rel="amphtml" class="next-post pull-right {{#if feature_image}}nextBackground {{/if}}" href="{{url}}amp">
+			<div class="prev-next-inner">
+				<span class="link-text">Next Post</span>
+				<h3 class="title h4">{{title}}</h3>
+			</div>
+		</a>
+	    {{/prev_post}}
+	</div>
+</div>

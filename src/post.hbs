@@ -1,0 +1,87 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<div class="container container-author">
+	<div class="row">
+		<div class="col-md-8 wow fadeInLeft" data-wow-duration="1s">
+			<div class="row default-layout">
+			{{#post}}
+			<!-- start post -->
+			<article class="col-sm-12 post-wrap full-post">
+				<div class="featured-media">
+					
+						<div class="image-container">
+						{{#if feature_image}}	
+							<img src="{{img_url feature_image}}" alt="{{{title}}}">
+						{{else}}
+						<img src="{{asset "assets/images/ippon-bkr.png"}}" alt="{{{title}}}">
+						{{/if}}	
+						</div>
+					
+					{{#if "tags"}}
+					<div class="tag-list">{{tags separator=""}}</div>
+					{{/if}}
+					{{#if featured}}
+                    <div class="featured"><i class="fa fa-star"></i>Featured</div>
+                    {{/if}}
+				</div>
+				
+				<h1 class="title">{{{title}}}</h1>
+				<div class="post-meta">
+					<span class="author">
+	                    <i class="fa fa-user"></i>
+						{{authors}}
+					</span>
+	                <span class="date">
+	                    <i class="fa fa-calendar-o"></i>
+	                    {{date format="MMM DD, YYYY"}}
+	                </span>
+	                <span class="comment">
+	                    <i class="fa fa-comment-o"></i>
+	                    <a href="{{url}}#disqus_thread">0 Comments</a>
+	                </span>
+				</div>
+				<section class="post-entry">
+				{{#author}}
+					{{#if website}}
+					<div class="content post_author">
+					{{> widget-linkedin_auteur}}
+					</div>
+					{{/if}}
+				{{/author}}
+				
+					{{content}}
+				</section>
+				<br>
+			<span class="recommend_article"><form id="kindly_tap" data-statut="0">Found this post useful? Kindly tap <button style="background: transparent;border: none;outline: none;"><img id="heart_art" src="../../assets/images/hearts.svg" ></button></form></span>
+			</article>
+			</div>
+			</div>
+			<!-- end post -->
+			{{> sidebar_post}}
+			<div class="col-xs-12">
+				{{> share}}
+			</div>
+			<div class="col-md-8 col-xs-12">
+				{{> about-author}}
+			<div class="col-xs-12 ippon_container clearfix">
+	                <!-- 	<img src="{{@blog.logo}}" alt="Ippon technology" class="img-rounded col-sm-3" /> -->
+	                <span class="col-xs-12 comapny"> OUR COMPANY</span>
+					<div class="col-xs-12">
+						Ippon Technologies is an international consulting firm that specializes in Agile Development, Big Data and DevOps / Cloud. Our 300+ highly skilled consultants are located in the US, France and Australia. Ippon technologies has a $32 million revenue and a 20% annual growth rate.
+						<div class="meta-info">
+							<span class="loaction"><i class="fa fa-map-marker fa-fw"></i>USA </span>
+							<span class="website"><a href="http://www.ippon.fr" target="_BLANK"><i class="fa fa-link fa-fw"></i>Website</a></span>
+							<span class="linkedin"><a href="https://www.linkedin.com/company/ippon-technology" target="_BLANK"><i class="fa fa-link fa-linkedin"></i>LinkedIn</a></span>
+						</div>
+					</div>
+	                </div>
+
+			{{> prev-next}}
+			{{/post}}
+			{{> comment}}
+			</div>
+			
+
+	</div>
+</div>

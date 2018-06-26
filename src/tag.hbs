@@ -1,0 +1,75 @@
+{{!< default}}
+{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+
+<!-- {{> cover-tag}} -->
+
+ <script
+ src="https://code.jquery.com/jquery-3.1.1.min.js"
+ integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+ crossorigin="anonymous"></script>
+
+<div class="container tags-container">
+
+	<div class="row">
+		<div class="col-md-8 wow fadeInLeft" data-wow-duration="1s">
+		<div class="cover-wrap col-xs-11">
+			<span class="col-xs-9"><h1>{{tag.name}}</h1></span>
+
+			<div class="meta-info col-xs-3">
+			<span><i class="fa fa-signal fa-fw"></i>Total {{plural pagination.total empty='0 Post' singular='% Post' plural='% Posts'}}</span>
+		</div>
+		</div>
+			<div class="row default-layout page_next">
+			{{#foreach posts}}
+			
+			<div class="card col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0" data-file="{{id}}" data-url={{url}} data-target="section">
+     <div class="row">
+      
+       <div class=" table-card">
+      <div class="left-image lazy" title="{{{title}}}" data-original="{{#if feature_image}}{{img_url feature_image}}{{else}}../../assets/images/ippon-bkr.png{{/if}}" style="background-repeat:no-repeat;background-position: center; background-size: cover;" data-href="{{url}}">
+       <div class="disqus-container">
+        <a href="{{url}}#disqus_thread" class="number_com col-xs-9"></a>
+        <form class="recommend_form col-xs-3" data-statut="0"><button  class="col-xs-12 white_icon"></button></form>
+      </div>
+      </div>
+         <div class="card-block" onclick="redirect({{url}})" title="{{{title}}}">
+
+           <div class="col-xs-12">
+           <h1 class="card-title col-xs-12">{{{title}}} </h1>
+          </div>
+           <p class="card-text card-text-latest">{{excerpt words=15}}… <br /><a href="{{url}}" class="disabledLink_p">Read More</a>
+           </p>
+           
+      <hr />
+      
+       <div class="col-xs-7 col-md-8 dp_margin_b author-block">
+              {{#author}}
+                <a href="{{url}}"><img src="{{#if profile_image}}{{img_url profile_image}}{{else}}../../assets/images/default-avatar.png{{/if}}" alt="{{name}}" class="pull-left img-author img-circle"></a> 
+                <p class="card-text card-text-latest"><a href="{{url}}" class="nom_auteur">{{name}}</a></p>
+            {{/author}}
+                <span class="tags_container"> 
+
+
+                   {{#if tags}}
+                    <i class="icon-label"></i>
+                     <h1>{{tags limit=1}}</h1>
+                  {{/if}}
+            </span>
+        </div>
+        <div class="col-xs-5 col-md-4 dp_margin_b read-info">
+        <p class="text-xs-right eta col-xs-12 pull-xs-right time_reading"></p>
+        <p class="text-xs-right card-text card-text-latest col-xs-12 pull-xs-right"><small class="text-muted">{{date format='MMM DD,YYYY'}}</small></p>
+        </div>
+       
+         </div>
+       </div>
+     </div>
+   </div>
+		
+			{{/foreach}}
+			</div>
+			{{pagination}}
+		</div>
+		{{> sidebar_home}}
+	</div>
+</div>

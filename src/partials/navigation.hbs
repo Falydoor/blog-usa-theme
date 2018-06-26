@@ -1,0 +1,11 @@
+<div id="navbar" class="navbar-collapse collapse">
+	<ul class="nav navbar-nav">
+	
+		<li class="home"><a href="{{@blog.url}}"><i class="icon-home2" aria-hidden="true"></i></a></li>
+		 	{{#foreach navigation}}
+		<li class="{{slug}} {{#if current}}current-menu-item{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+		{{/foreach}}
+		<li class="we_are_ippon"><a href="https://www.ippon.tech/we_are_ippon/" target="_blank">#WeAreIppon</a>
+            </li>
+	</ul>
+</div>

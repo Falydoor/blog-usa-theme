@@ -1,0 +1,54 @@
+ <script
+  src="https://code.jquery.com/jquery-3.1.1.min.js"
+  integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+  crossorigin="anonymous"></script>
+
+{{#get "posts" filter="featured:true" limit="3" include="author,tags"}} 
+<div class="main-container col-xs-12">
+ <div class="card-columns1 col-xs-12 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0"> 
+  {{#foreach posts}}
+     
+    <div class="card" data-file="{{id}}" data-url={{url}} data-target="section">
+     <div class="col-xs-12 card_bkr" title="{{{title}}}"  style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;" data-href="{{url}}">
+       <div class="disqus-container">
+        <a href="{{url}}#disqus_thread" class="number_com col-xs-9"></a>
+        <form class="recommend_form col-xs-3" data-statut="0"><button  class="col-xs-12 white_icon"></button></form>
+      </div>
+     </div>  
+      <div class="card-block col-xs-12" onclick="redirect({{url}})" title="{{{title}}}">
+       <div class="col-xs-12 card-title-container">
+          <div class="card-title col-xs-12"><h2><a href="{{url}}" class="card_titre-a disabledLink_p" onclick="redirect({{url}})">{{{title}}}</h2></a>
+         </div>
+       </div>
+        
+        <p class="card-text col-xs-12">{{excerpt words=20}}… <br/><a href="{{url}}" onclick="redirect({{url}})" class="disabledLink_p">Read More</a>
+        
+         </p>
+
+        <hr class="col-xs-11 hr_card" />
+
+        <div class="col-xs-7 col-md-8 dp_margin_b">
+          {{#author}}
+            <a href="{{url}}"><img src="{{#if profile_image}}{{img_url profile_image}}{{else}}assets/images/default-avatar.png{{/if}}" alt="{{name}}" class="pull-left img-author img-circle"></a>
+            <p class="card-text"><a href="{{url}}" class="nom_auteur">{{name}}</a></p>
+        {{/author}}
+       
+        <span class="tags_container"> 
+        
+               {{#if tags}}
+               <i class="icon-label"></i>
+                 <h1>{{tags limit=1}}</h1>
+              {{/if}}
+        </span>
+        </div>
+        <div class="col-md-4 col-xs-5 dp_margin_b read-info">
+        <p class="text-xs-right eta col-xs-12  time_reading"></p>
+        <p class="text-xs-right card-text col-xs-12 "><small class="text-muted">{{date format='MMM DD,YYYY'}}</small></p>
+        </div>
+      </div>
+    </div>
+  {{/foreach}}
+ </div> 
+
+</div>
+ {{/get}} 

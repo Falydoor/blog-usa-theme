@@ -1,0 +1,100 @@
+/*====================================================
+	MIXINS
+====================================================*/
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow:    @string;
+	box-shadow:         @string;
+}
+.border-radius (@string: 3px) {
+	-webkit-border-radius: @string;
+	-moz-border-radius:    @string;
+	border-radius:         @string;
+}
+.transition (@transition) {
+	-webkit-transition: @transition;  
+	-moz-transition: @transition;
+	-ms-transition: @transition; 
+	-o-transition:  @transition;
+	transition: @transition; 
+}
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: @string;
+	-ms-transform: @string;
+	-o-transform: @string;
+	transform: @string;
+}
+.opacity (@value: 1) {
+	-webkit-opacity: @value;
+	-moz-opacity: @value;
+	-ms-opacity: @value;
+	-o-opacity: @value;
+	opacity: @value;
+	@value-percentage: @value * 100;
+	filter: ~"alpha(opacity=(@{value-percentage}))";
+}
+
+.calc(@prop; @val) {
+  @{prop}: calc(~'@{val}');
+  @{prop}: -moz-calc(~'@{val}');
+  @{prop}: -webkit-calc(~'@{val}');
+  @{prop}: -o-calc(~'@{val}');
+}
+
+.Lato_Regular
+{
+	@font-face {
+
+        font-family: 'Lato_Regular';
+        src: url('../fonts/lato_regular/lato-regular-webfont.eot') format('enbedded-opentype'),
+             url('../fonts/lato_regular/lato-regular-webfont.ttf') format('truetype'),
+             url('../fonts/lato_regular/lato-regular-webfont.woff') format('woff'),
+             url('../fonts/lato_regular/lato-regular-webfont.woff2') format('woff'),
+             url('../fonts/lato_regular/lato-regular-webfont.svg') format('svg');
+
+    }
+
+}
+.Lato_Black
+{
+	@font-face {
+
+        font-family: 'Lato_Black';
+        src: url('../fonts/lato_black/Lato-Black.eot') format('enbedded-opentype'),
+             url('../fonts/lato_black/Lato-Black.ttf') format('truetype'),
+             url('../fonts/lato_black/Lato-Black.woff') format('woff'),
+             url('../fonts/lato_black/Lato-Black.svg') format('svg');
+
+    }
+
+}
+.Lato_Bold
+{
+	@font-face {
+
+        font-family: 'Lato_Bold';
+        src: url('../fonts/lato_bold/lato-bold-webfont.eot') format('enbedded-opentype'),
+             url('../fonts/lato_bold/lato-bold-webfont.ttf') format('truetype'),
+             url('../fonts/lato_bold/lato-bold-webfont.woff') format('woff'),
+             url('../fonts/lato_bold/lato-bold-webfont.woff2') format('woff'),
+             url('../fonts/lato_bold/lato-bold-webfont.svg') format('svg');
+
+    }
+
+}
+
+.Linearicons
+{
+	@font-face {
+
+        font-family: 'Linearicons';
+        src: url('../fonts/Linearicons/linearicons-webfont.eot') format('enbedded-opentype'),
+             url('../fonts/Linearicons/linearicons-webfont.ttf') format('truetype'),
+             url('../fonts/Linearicons/linearicons-webfont.woff') format('woff'),
+             url('../fonts/Linearicons/linearicons-webfont.woff2') format('woff'),
+             url('../fonts/Linearicons/linearicons-webfont.svg') format('svg');
+
+    }
+
+}

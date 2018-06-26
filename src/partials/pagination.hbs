@@ -1,0 +1,12 @@
+<!-- start pagination -->
+<div class="pagination-wrap col-xs-12">
+	<div class="pagination clearfix" role="navigation">
+		{{#if prev}}
+		<a class="newer-posts btn col-xs-4" href="{{page_url prev}}">Newer</a>
+		{{/if}}
+        {{#if next}}
+        <a class="older-posts btn col-xs-4" href="{{page_url next}}">Older</a>
+        {{/if}}
+    </div>
+</div>
+<!-- end pagination -->
