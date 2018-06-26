@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  {{! Document Settings }}
-  <meta charset="utf-8" />
+	{{! Document Settings }}
+	<meta charset="utf-8" />
   <meta http-equiv="content-language" content="en-us" />
   <link rel="alternate" href="http://blog.ippon.tech" hreflang="en-us">
   <meta name="robots" content="all" />
-  <meta name="google-site-verification" content="-D8Jra1e4TQf7xU2jFqhoRh_cW0b-6AnwXurQ" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> {{! Page Meta }}
-  <title>{{meta_title}}</title>
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no" />
-  <!-- fav icons -->
-  <link rel="shortcut icon" href="{{asset " images/favicon.png "}}">
-  <link rel="canonical" rel="amphtml" href="{{url}}amp" />
-  <!-- stylesheets -->
-  {{! Styles'n'Scripts }}
-  <link href='{{asset "css/font.css?family=Open+Sans:400,700"}}' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="{{asset " css/bootstrap.min.css "}}">
-  <link rel="stylesheet" href="{{asset " css/font-awesome.min.css "}}">
-  <link rel="stylesheet" href="{{asset " css/owl.carousel.css "}}">
-  <link rel="stylesheet" href="{{asset " css/owl.transitions.css "}}">
-  <link rel="stylesheet" type="text/css" href="{{asset " css/screen.css "}}">
-  <link rel="stylesheet" type="text/css" href="{{asset " css/style.css "}}">
-  <link rel="stylesheet" type="text/css" href="{{asset " css/responsive.css "}}">
-  <link rel="stylesheet" type="text/css" href="{{asset " css/prism_Okaidia.css "}}">
-  {{! inserting theme config partial}}
-  {{> config}}
-  {{! Ghost outputs important style and meta data with this tag }}
+	<meta name="google-site-verification" content="-D8Jra1e4TQf7xU2jFqhoRh_cW0b-6AnwXurQ" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	{{! Page Meta }}
+	<title>{{meta_title}}</title>
+	<meta name="keywords" content="">
+	<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+	<!-- fav icons -->
+	<link rel="shortcut icon" href="{{asset "images/favicon.png"}}">
+	<link rel="canonical" rel="amphtml" href="{{url}}amp" />
+	<!-- stylesheets -->
+	{{! Styles'n'Scripts }}
+	<link href='{{asset "css/font.css?family=Open+Sans:400,700"}}' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="{{asset "css/bootstrap.min.css"}}">
+  <link rel="stylesheet" href="{{asset "css/font-awesome.min.css"}}"> 
+	<link rel="stylesheet" href="{{asset "css/owl.carousel.css"}}">
+	<link rel="stylesheet" href="{{asset "css/owl.transitions.css"}}">
+  <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}">  
+	<link rel="stylesheet" type="text/css" href="{{asset "css/style.css"}}">
+  <link rel="stylesheet" type="text/css" href="{{asset "css/responsive.css"}}"> 
+ 	<link rel="stylesheet" type="text/css" href="{{asset "css/prism_Okaidia.css"}}"> 
+	{{! inserting theme config partial}}
+	{{> config}}
+	{{! Ghost outputs important style and meta data with this tag }}
   {{ghost_head}}
   <meta name="google-site-verification" content="FzAj1Qvu2CxzBg1EEiofYpKD7LOwx9LaDr9jhQ7LOr8" />
   <meta name="google-site-verification" content="1DRl2R-D8Jra1e4TQf7xU2jFqhoRh_cW0b-6AnwXurQ" />
 </head>
+<body class="{{body_class}}" {{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}});"{{/if}}>
+	{{! insert header partial}}
+	{{> header}}
+	{{{body}}}
+	{{! insert footer partial}}
+	{{> footer}}
 
-<body class="{{body_class}}" {{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}});" {{/if}}>
-  {{! insert header partial}} {{> header}} {{{body}}} {{! insert footer partial}} {{> footer}}
-  <script id="dsq-count-scr" src="//http-blog-ippon-tech.disqus.com/count.js" async></script>
+	<script id="dsq-count-scr" src="//http-blog-ippon-tech.disqus.com/count.js" async></script>
+  <script src="{{asset "js/prism_Okaidia.js"}}" async></script> 
 
-  <script src="{{asset " js/prism_Okaidia.js "}}" async></script>
-
-  <script type="text/javascript">
-    var isMobile = {
-      Android: function () {
-        return navigator.userAgent.match(/Android/i);
-      },
-      BlackBerry: function () {
-        return navigator.userAgent.match(/BlackBerry/i);
-      },
-      iOS: function () {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-      },
-      Opera: function () {
-        return navigator.userAgent.match(/Opera Mini/i);
-      },
-      Windows: function () {
-        return navigator.userAgent.match(/IEMobile/i);
-      },
-      any: function () {
-        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
-      }
-    };
-
-    function redirect(url) {
-      if (isMobile.any()) {
-        window.location = url + "amp";
-      } else {
-        window.location = url;
-      }
+<script type="text/javascript">
+  var isMobile = {
+    Android: function () {
+      return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function () {
+      return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function () {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function () {
+      return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function () {
+      return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function () {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
     }
+  };
 
-    $(".disabledLink_p").on('click', function (e) {
-      e.preventDefault();
-    })
-  </script>
+  function redirect(url) {
+    if (isMobile.any()) {
+      window.location = url + "amp";
+    } else {
+      window.location = url;
+    }
+  }
+
+  $(".disabledLink_p").on('click', function (e) {
+    e.preventDefault();
+  })
+</script>
 
 </body>
 
