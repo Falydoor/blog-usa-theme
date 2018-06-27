@@ -1,67 +1,66 @@
 <div class="header-container">
 	<div class="header-container-child">
 		<div class="primary_bar">
- 	 <a href="{{@blog.url}}" class="logo_ippon"> <img class="wow fadeInDown" data-wow-duration="1s" src="{{@blog.logo}}">  </a>
-	<ul class="right-buttons">
-						<li>
-							<a href="/contact" id="contact_tel"><!-- <i class="icon-telephone2"></i> --><img src="{{asset "assets/images/mail.svg"}}"></a>
-						</li>
-						<li>
-						 <div class="wrap-search">
-						 <a id="link_m_search" href="/m-search"><img src="{{asset "assets/images/search2.svg"}}"></a>
-						 <form action="" autocomplete="off">
-							   <input type="text" name="search" placeholder="Search.." id="search-input" >
-							  </form>
+			<a href="https://en.ippon.tech/" class="logo_ippon">
+				<img class="wow fadeInDown" data-wow-duration="1s" src="{{@blog.logo}}">
+			</a>
+			<ul class="right-buttons">
+				<li>
+					<a href="/contact" id="contact_tel">
+						<img src="{{asset "assets/images/mail.svg"}}">
+					</a>
+				</li>
+				<li>
+					<div class="wrap-search">
+						<a id="link_m_search" href="/m-search">
+							<img src="{{asset "assets/images/search2.svg"}}">
+						</a>
+						<form action="" autocomplete="off">
+							<input type="text" name="search" placeholder="Search.." id="search-input">
+						</form>
 						<div class="popover__wrapper">
-						 <div id="popover-content">
-						 <div class="post_zone">
-								 <div class="col-xs-12 searchfor">
-								 	<a href="">search for <span></span></a>
-								 </div>
-								 <div class="info_search"></div>
-								 <span>
-								 	POSTS
-								 </span>
-								 <hr />
-								 <ul class="search_post">
-								 	
-								 </ul>
-						</div>	
-						 <div class="search_tag">
-						 <span> TAGS</span><!-- <span class="more"><a href="">MORE</a></span> -->
-						 	<hr />
-						 	<ul>
-						 		
-						 	</ul>
-						 </div>
-						 </div>
-					 </div>
+							<div id="popover-content">
+								<div class="post_zone">
+									<div class="col-xs-12 searchfor">
+										<a href="">search for
+											<span></span>
+										</a>
+									</div>
+									<div class="info_search"></div>
+									<span>POSTS</span>
+									<hr />
+									<ul class="search_post">
+									</ul>
+								</div>
+								<div class="search_tag">
+									<span>TAGS</span>
+									<hr />
+									<ul>
+									</ul>
+								</div>
 							</div>
-	
-						</li> 
-					</ul> 
-</div>
-	<!-- start header -->
-	<header class="main-header">
-		<nav class="navbar navbar-default" id="main-navbar">
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
 
-			<div>
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					</button>
-
+		<header class="main-header">
+			<nav class="navbar navbar-default" id="main-navbar">
+				<div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+						 aria-controls="navbar">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					{{navigation}}
 				</div>
-				{{navigation}}
-			</div>
-		</nav>
-	</header>
+			</nav>
+		</header>
 	</div>
-
 </div>
-<div class="page-wrap page-wrap-position" >
-
-	<!-- end header -->
+<div class="page-wrap page-wrap-position">
