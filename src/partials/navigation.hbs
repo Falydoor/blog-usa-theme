@@ -2,9 +2,8 @@
 	<ul class="nav navbar-nav">
 	
 		<li class="home"><a href="{{@blog.url}}"><i class="icon-home2" aria-hidden="true"></i></a></li>
-		 	{{#foreach navigation}}
+		{{#foreach navigation}}
 		<li class="{{slug}} {{#if current}}current-menu-item{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
 		{{/foreach}}
-		<li class="we_are_ippon"><a href="https://en.ippon.tech/">#WeAreIppon</a></li>
 	</ul>
 </div>
