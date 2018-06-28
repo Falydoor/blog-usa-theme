@@ -8,7 +8,7 @@ Install [Less](http://lesscss.org/):
 npm install -g less
 ```
 
-# Compiling the theme
+## Compiling the theme
 
 ```
 lessc src/assets/css/screen.less src/assets/css/screen.css
