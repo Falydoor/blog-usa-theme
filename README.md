@@ -24,5 +24,6 @@ cd src \
         -i "*.jpg" -i "*.png" -i "*.gif" \
         -i "*.svg" -i "*.ttf" -i "*.woff" -i "*.woff2" -i "*.eot" -i "*.otf" \
         -i "*.txt" \
+        -i "*.html" \
     && cd ..
 ```
