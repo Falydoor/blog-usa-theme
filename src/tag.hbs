@@ -1,32 +1,27 @@
-{{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+{{!< default}} {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+  <!-- {{> cover-tag}} -->
 
-<!-- {{> cover-tag}} -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
 
-<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-  crossorigin="anonymous"></script>
-
-<div class="container tags-container">
-
-  <div class="row">
-    <div class="col-md-8 wow fadeInLeft" data-wow-duration="1s">
-      <div class="cover-wrap col-xs-11">
-        <span class="col-xs-9">
-          <h1>{{tag.name}}</h1>
-        </span>
-
-        <div class="meta-info col-xs-3">
-          <span>
-            <i class="fa fa-signal fa-fw"></i>Total {{plural pagination.total empty='0 Post' singular='% Post' plural='% Posts'}}</span>
+  <div class="container">
+    <div class="col-md-8 col-xs-12 tags-container">
+      <div class="cover-wrap">
+        <div class="meta-info pull-right">
+          <span><i class="fa fa-signal fa-fw"></i>Total {{plural pagination.total empty='0 Post' singular='% Post'
+            plural='% Posts'}}</span>
         </div>
+        <h1>{{tag.name}}</h1>
       </div>
+
       <div class="row default-layout page_next">
         {{#foreach posts}}
-          {{> post-horizontal-card}}
+        {{> post-horizontal-card}}
         {{/foreach}}
       </div>
+
       {{pagination}}
     </div>
+
     {{> sidebar_home}}
   </div>
-</div>
