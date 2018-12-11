@@ -1,28 +1,17 @@
-<div class="card col-xs-offset-1 col-xs-10 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0" data-file="{{id}}" data-url={{url}} data-target="section">
+<div class="card" data-file="{{id}}" data-url={{url}} data-target="section">
   <div class="row">
     <div class="table-card">
       <div class="left-image lazy" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}/assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"
-        data-href="{{url}}">
-        <div class="disqus-container">
-          <a href="{{url}}#disqus_thread" class="number_com col-xs-9"></a>
-          <form class="recommend_form col-xs-3" data-statut="0">
-            <button class="col-xs-12 white_icon"></button>
-          </form>
-        </div>
-      </div>
+        data-href="{{url}}"></div>
 
       <div class="card-block" title="{{{title}}}">
-        <div class="col-xs-12">
-          <a href="{{url}}">
-            <h2 class="card-title col-xs-12">{{{title}}}</h2>
-          </a>
+        <div class="card-content">
+          <p class="card-title"><a href="{{url}}" class="card_titre-a">{{{title}}}</a></p>
+          <p class="card-excerpt">{{excerpt words=15}}…</p>
+          <p class="card-read-more"><a href="{{url}}">Read More</a></p>
         </div>
-        <p class="card-text card-text-latest">{{excerpt words=15}}…
-          <br/>
-          <a href="{{url}}">Read More</a>
-        </p>
 
-        <hr/>
+        <hr class="col-xs-11 hr_card" />
 
         <div class="col-xs-7 col-md-8 dp_margin_b author-block">
           {{#author}}

@@ -2,16 +2,18 @@
 
 ## Requirements
 
-Install [Less](http://lesscss.org/):
+Install [Less](http://lesscss.org/) and [Sass](https://sass-lang.com/):
 
 ```
 npm install -g less
+npm install -g sass
 ```
 
 ## Compiling the theme
 
 ```
 lessc src/assets/css/screen.less src/assets/css/screen.css
+sass -t compressed src/assets/sass/style.scss src/assets/sass/style.css
 ```
 
 Packaging the theme:

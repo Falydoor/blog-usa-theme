@@ -4,30 +4,21 @@
   
 {{#get "posts" filter="featured:true" limit="3" include="author,tags"}}
 <div class="main-container col-xs-12">
-  <div class="card-columns1 col-xs-12 col-sm-8 col-sm-offset-2 col-md-12 col-md-offset-0">
+  <div class="card-columns1">
     {{#foreach posts}}
-    <div class="card" data-file="{{id}}" data-url={{url}} data-target="section">
-      <div class="col-xs-12 card_bkr" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"
-        data-href="{{url}}">
-      </div>
+    <div class="card">
+      <div class="card_bkr" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"></div>
 
-      <div class="card-block col-xs-12" title="{{{title}}}">
-        <div class="col-xs-12 card-title-container">
-          <div class="card-title col-xs-12">
-            <h2>
-              <a href="{{url}}" class="card_titre-a">{{{title}}}</a>
-            </h2>
-          </div>
+      <div class="card-block" title="{{{title}}}">
+        <div class="col-xs-12 card-content">
+          <p class="card-title"><a href="{{url}}" class="card_titre-a">{{{title}}}</a></p>
+          <p class="card-excerpt">{{excerpt words=15}}…</p>
+          <p class="card-read-more"><a href="{{url}}">Read More</a></p>
         </div>
-
-        <p class="card-text col-xs-12">{{excerpt words=20}}…
-          <br/>
-          <a href="{{url}}">Read More</a>
-        </p>
 
         <hr class="col-xs-11 hr_card" />
 
-        <div class="col-xs-7 col-md-8 dp_margin_b">
+        <div class="col-xs-7 col-md-8 dp_margin_b author-block">
           {{#author}}
           <a href="{{url}}">
             <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}assets/images/default-avatar.png{{/if}}" alt="{{name}}"
