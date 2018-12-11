@@ -10,20 +10,23 @@
       <div class="card_bkr" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"></div>
 
       <div class="card-block" title="{{{title}}}">
-        <div class="col-xs-12 card-content">
+        <div class="card-content">
           <p class="card-title"><a href="{{url}}" class="card_titre-a">{{{title}}}</a></p>
           <p class="card-excerpt">{{excerpt words=15}}…</p>
           <p class="card-read-more"><a href="{{url}}">Read More</a></p>
         </div>
 
-        <hr class="col-xs-11 hr_card" />
+        <hr class="hr_card" />
 
-        <div class="col-xs-7 col-md-8 dp_margin_b author-block">
+        <div class="dp_margin_b author-block">
           {{#author}}
           <a href="{{url}}">
             <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}assets/images/default-avatar.png{{/if}}" alt="{{name}}"
               class="pull-left img-author img-circle">
           </a>
+          <p class="card-date">
+            <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
+          </p>
           <p class="card-text">
             <a href="{{url}}" class="nom_auteur">{{name}}</a>
           </p>
@@ -34,12 +37,6 @@
             <i class="icon-label"></i> {{tags limit=1}}
             {{/if}}
           </span>
-        </div>
-
-        <div class="col-md-4 col-xs-5 dp_margin_b read-info">
-          <p class="text-xs-right card-text col-xs-12 ">
-            <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
-          </p>
         </div>
       </div>
     </div>
