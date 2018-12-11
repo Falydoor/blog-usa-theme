@@ -7,7 +7,9 @@
   <div class="card-columns1">
     {{#foreach posts}}
     <div class="card">
-      <div class="card_bkr" title="{{{title}}}" style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;"></div>
+      <div class="card_bkr" title="{{{title}}}"
+        style="background:url({{#if feature_image}}{{img_url feature_image}}{{else}}assets/images/ippon-bkr.png{{/if}}) no-repeat center; background-size: cover;">
+      </div>
 
       <div class="card-block" title="{{{title}}}">
         <div class="card-content">
@@ -18,25 +20,24 @@
 
         <hr class="hr_card" />
 
-        <div class="dp_margin_b author-block">
+        <div class="author-block">
+          <p class="card-date">
+            <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
+          </p>
           {{#author}}
           <a href="{{url}}">
             <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}assets/images/default-avatar.png{{/if}}" alt="{{name}}"
               class="pull-left img-author img-circle">
           </a>
-          <p class="card-date">
-            <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
-          </p>
           <p class="card-text">
             <a href="{{url}}" class="nom_auteur">{{name}}</a>
           </p>
           {{/author}}
-
-          <span class="tags_container">
+          <p class="card-tags">
             {{#if tags}}
             <i class="icon-label"></i> {{tags limit=1}}
             {{/if}}
-          </span>
+          </p>
         </div>
       </div>
     </div>
