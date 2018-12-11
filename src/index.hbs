@@ -43,18 +43,14 @@
                   </p>
                   {{/author}}
                   <span class="tags_container">
-
-
                     {{#if tags}}
-                    <i class="icon-label"></i>
-                    <h1>{{tags limit=1}}</h1>
+                    <i class="icon-label"></i> {{tags limit=1}}
                     {{/if}}
                   </span>
                 </div>
                 <div class="col-xs-5 col-md-4 dp_margin_b read-info">
-                  <p class="text-xs-right eta col-xs-12 pull-xs-right time_reading"></p>
                   <p class="text-xs-right card-text card-text-latest col-xs-12 pull-xs-right">
-                    <small class="text-muted">{{date format='MMM DD,YYYY'}}</small>
+                    <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
                   </p>
                 </div>
 

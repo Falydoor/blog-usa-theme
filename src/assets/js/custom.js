@@ -42,13 +42,13 @@ $(function() {
             })
         },
         readTime: function() {
-            $(".card").each(function() {
-                $(this).readingTime({
-                    readingTimeTarget: $(this).find(".eta"),
-                    remotePath: $(this).attr("data-file"),
-                    remoteTarget: $(this).attr("data-target")
-                })
-            })
+            // $(".card").each(function() {
+            //     $(this).readingTime({
+            //         readingTimeTarget: $(this).find(".eta"),
+            //         remotePath: $(this).attr("data-file"),
+            //         remoteTarget: $(this).attr("data-target")
+            //     })
+            // })
         },
         searchInput: function() {
             $(document).on("click", function(t) {
