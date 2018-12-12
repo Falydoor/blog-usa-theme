@@ -13,7 +13,7 @@ npm install -g sass
 
 ```
 lessc src/assets/css/screen.less src/assets/css/screen.css
-sass -t compressed src/assets/sass/style.scss src/assets/sass/style.css
+sass -t compressed src/assets/css/style.scss src/assets/css/style.css
 ```
 
 Packaging the theme:

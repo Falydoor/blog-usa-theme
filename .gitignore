@@ -1,3 +1,5 @@
 *.zip
 .DS_Store
 src/assets/css/screen.css
+.sass-cache/
+*.map
