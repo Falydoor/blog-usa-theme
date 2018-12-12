@@ -40,25 +40,9 @@ var themeApp = {
 							</div>';
 					}
 					latest.append(string);
-					latest.owlCarousel({
-						singleItem : true,
-						autoPlay : 4000,
-						pagination : false,
-						slideSpeed : 100,
-						paginationSpeed : 100,
-						transitionStyle : "goDown",
-					});
 				}
 			}).fail(function (err){
 				console.log(err);
-			});
-			$(".latest-prev").click(function(e){
-				e.preventDefault();
-				latest.trigger('owl.prev');
-			});
-			$(".latest-next").click(function(e){
-				e.preventDefault();
-				latest.trigger('owl.next');
 			});
 		}
 	},
