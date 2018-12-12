@@ -41,15 +41,6 @@ $(function() {
                 effect: "fadeIn"
             })
         },
-        readTime: function() {
-            // $(".card").each(function() {
-            //     $(this).readingTime({
-            //         readingTimeTarget: $(this).find(".eta"),
-            //         remotePath: $(this).attr("data-file"),
-            //         remoteTarget: $(this).attr("data-target")
-            //     })
-            // })
-        },
         searchInput: function() {
             $(document).on("click", function(t) {
                 "search-input" == t.target.id ? $("#search-input").width() < 100 && $("#search-input").animate({
@@ -152,7 +143,7 @@ $(function() {
             })
         },
         init: function() {
-            this.card_click(), this.lazyLoad(), this.readTime(), this.responseIcon(), this.session_likes(), this.increment_likes(), this.searchInput(), this.positionning()
+            this.card_click(), this.lazyLoad(), this.responseIcon(), this.session_likes(), this.increment_likes(), this.searchInput(), this.positionning()
         }
     };
     t.init()
