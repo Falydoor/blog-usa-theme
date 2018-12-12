@@ -13,6 +13,7 @@ npm install -g sass
 
 ```
 lessc src/assets/css/screen.less src/assets/css/screen.css
+sass -t compressed src/assets/css/responsive.scss src/assets/css/responsive.css
 sass -t compressed src/assets/css/style.scss src/assets/css/style.css
 ```
 
