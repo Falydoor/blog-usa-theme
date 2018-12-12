@@ -5,6 +5,14 @@
     }
 }
 
+#contact_tel {
+    img {
+        width: 23px;
+        margin-right: 3px;
+        margin-top: 0;
+    }
+}
+
 .card {
     border-radius: .25rem;
     border: 1px solid rgba(0, 0, 0, 0.125);
@@ -33,17 +41,17 @@
     }
 
     .author-block {
-		// so that the floating image doesn't overflows
-		height: 51px;
+        // so that the floating image doesn't overflows
+        height: 51px;
 
-		.card-date {
+        .card-date {
             float: right;
             margin-top: 0;
-		}
-		
-		.card-tags {
-			margin-top: 0;
-		}
+        }
+
+        .card-tags {
+            margin-top: 0;
+        }
     }
 
     .card-text {
