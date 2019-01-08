@@ -35,28 +35,6 @@
 <script src="{{asset "js/jquery.ghostHunter.min.js"}}" async></script>
 
 <script type="text/javascript">
-$(document).ready(function () {
-    $('#kindly_tap').submit(function () {
-        var host = $(location).attr('protocol') + '//' + $(location).attr('hostname');
-        if ($(this).data('statut') == '0') {
-            var src = '../../assets/images/heart.svg';
-            $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=GdXtQyStXSIwHgPIDbu8u5cLARMfubbrYe6G5QW7zekc28JXnpDIVF1om3plkrML&forum=http-blog-ippon-tech&thread:link=' + host + '{{url}}&vote=1', function () {
-                $('#heart_art').attr('src', src);
-            });
-            $(this).data('statut', '1');
-        } else {
-            $(this).data('statut', '0');
-            var src = '../../assets/images/hearts.svg';
-            $.post('https://disqus.com/api/3.0/threads/vote.json?api_key=GdXtQyStXSIwHgPIDbu8u5cLARMfubbrYe6G5QW7zekc28JXnpDIVF1om3plkrML&forum=http-blog-ippon-tech&thread:link=' + host + '{{url}}&vote=-1', function () {
-                $('#heart_art').attr('src', src);
-            });
-        }
-        return false;
-    });
-});
-</script>
-
-<script type="text/javascript">
 $('.recommend_form').submit(function () {
     var url = $(this).parents('.card').data('file'),
         btn = $(this).find('button');
