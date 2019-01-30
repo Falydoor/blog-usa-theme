@@ -93,14 +93,18 @@
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
+    .container_page .row_page .col-md-4, .container_page .row_page .col-md-8 {
+        padding-left: 0;
+        padding-right: 0;
+    }
 }
 
 @media (min-width: 993px) {
-    .main-last .card .featured_home + h4, .page_next .card .featured_home + h4 {
+    .main-last .card .featured_home + h4, .posts .card .featured_home + h4 {
         margin-top: 12px;
     }
 
-    .main-last .card .card-block, .main-last .card .left-image, .page_next .card .card-block, .page_next .card .left-image {
+    .main-last .card .card-block, .main-last .card .left-image, .posts .card .card-block, .posts .card .left-image {
         display: table-cell;
         width: 50%;
     }
@@ -118,47 +122,47 @@
 }
 
 @media (max-width: 992px) {
-    .last-article-container, .last-article-container .main-last, .page_next, .page_next .main-last, .tags-container, .tags-container .main-last {
+    .last-article-container, .last-article-container .main-last, .posts, .posts .main-last, .tags-container, .tags-container .main-last {
         margin-left: 0;
         margin-right: 0;
         padding-left: 0;
         padding-right: 0;
     }
 
-    .last-article-container, .page_next, .tags-container {
+    .last-article-container, .posts, .tags-container {
         position: relative;
         display: block;
     }
 
-    .last-article-container .featured_home + h4, .page_next .featured_home + h4, .tags-container .featured_home + h4 {
+    .last-article-container .featured_home + h4, .posts .featured_home + h4, .tags-container .featured_home + h4 {
         margin-top: 12px;
     }
 
-    .last-article-container > h4, .page_next > h4, .tags-container > h4 {
+    .last-article-container > h4, .posts > h4, .tags-container > h4 {
         padding-left: 0;
     }
 
-    .last-article-container .card .table-card, .page_next .card .table-card, .tags-container .card .table-card {
+    .last-article-container .card .table-card, .posts .card .table-card, .tags-container .card .table-card {
         display: table;
         width: 100%;
     }
 
-    .last-article-container .card .table-card .left-image, .page_next .card .table-card .left-image, .tags-container .card .table-card .left-image {
+    .last-article-container .card .table-card .left-image, .posts .card .table-card .left-image, .tags-container .card .table-card .left-image {
         display: block !important;
         width: 100%;
         height: 217px;
     }
 
-    .last-article-container .card .table-card .card-block, .page_next .card .table-card .card-block, .tags-container .card .table-card .card-block {
+    .last-article-container .card .table-card .card-block, .posts .card .table-card .card-block, .tags-container .card .table-card .card-block {
         display: block;
         width: 100%;
     }
 
-    .last-article-container .card .table-card .card-block .read-info, .page_next .card .table-card .card-block .read-info, .tags-container .card .table-card .card-block .read-info {
+    .last-article-container .card .table-card .card-block .read-info, .posts .card .table-card .card-block .read-info, .tags-container .card .table-card .card-block .read-info {
         float: right;
     }
 
-    .last-article-container .card .table-card .card-block .read-info p:first-child, .page_next .card .table-card .card-block .read-info p:first-child, .tags-container .card .table-card .card-block .read-info p:first-child {
+    .last-article-container .card .table-card .card-block .read-info p:first-child, .posts .card .table-card .card-block .read-info p:first-child, .tags-container .card .table-card .card-block .read-info p:first-child {
         margin-bottom: (-8px) !important;
     }
 }
@@ -362,14 +366,14 @@
         margin-left: -42px;
     }
 
-    .tag-template .row.default-layout.page_next .card {
+    .tag-template .row.default-layout.posts .card {
         padding-left: 0;
         padding-right: 0;
         width: 100%;
         margin-left: 0;
     }
 
-    .tag-template .row.default-layout.page_next .card .card-block .card-text {
+    .tag-template .row.default-layout.posts .card .card-block .card-text {
         padding-left: 0;
     }
 
@@ -542,12 +546,12 @@
         float: right;
     }
 
-    .tag-template .row.default-layout.page_next .card {
+    .tag-template .row.default-layout.posts .card {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .tag-template .row.default-layout.page_next .card .card-block .card-text {
+    .tag-template .row.default-layout.posts .card .card-block .card-text {
         padding-left: 0;
     }
 
