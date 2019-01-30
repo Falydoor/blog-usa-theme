@@ -1,8 +1,5 @@
-{{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
-
-{{#post}}
-<div class="container container-author">
+{{!< default}} {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
+  {{#post}} <div class="container container-author">
   <div class="row">
     <div class="col-md-8">
       <div class="row default-layout">
@@ -28,7 +25,9 @@
           <div class="post-meta">
             <span class="author">
               <i class="fa fa-user"></i>
-              {{authors}}
+              {{#foreach authors}}
+              <a href="/author/{{slug}}/">{{name}}</a>{{#unless @last}}, {{/unless}}
+              {{/foreach}}
             </span>
             <span class="date">
               <i class="fa fa-calendar-o"></i>
@@ -39,7 +38,7 @@
               <a href="{{url}}#disqus_thread">0 Comments</a>
             </span>
           </div>
-          
+
           <section class="post-entry">
             {{#author}} {{#if website}}
             <div class="content post_author">
@@ -50,16 +49,18 @@
         </article>
         <!-- end post -->
       </div>
-    
+
       {{> share}}
-    
+
       {{> about-author}}
-      
+
       <div class="col-xs-12 ippon_container clearfix">
         <span class="col-xs-12 company">OUR COMPANY</span>
         <div class="col-xs-12">
-          Ippon Technologies is an international consulting firm that specializes in Agile Development, Big Data and DevOps / Cloud.
-          Our 300+ highly skilled consultants are located in the US, France and Australia. Ippon technologies has a $32 million
+          Ippon Technologies is an international consulting firm that specializes in Agile Development, Big Data and
+          DevOps / Cloud.
+          Our 300+ highly skilled consultants are located in the US, France and Australia. Ippon technologies has a $32
+          million
           revenue and a 20% annual growth rate.
           <div class="meta-info">
             <span class="loaction">
@@ -76,11 +77,11 @@
       </div>
 
       {{> prev-next}}
-      
+
       {{> comment}}
     </div>
 
     {{> sidebar_post}}
   </div>
-</div>
-{{/post}}
+  </div>
+  {{/post}}
