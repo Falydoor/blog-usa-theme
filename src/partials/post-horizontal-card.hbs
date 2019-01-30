@@ -17,15 +17,11 @@
         <p class="card-date">
           <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
         </p>
-        {{#author}}
-        <a href="{{url}}">
-          <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}/assets/images/default-avatar.png{{/if}}" alt="{{name}}"
-            class="pull-left img-author img-circle">
-        </a>
         <p class="card-text card-text-latest">
-          <a href="{{url}}" class="nom_auteur">{{name}}</a>
+          {{#foreach authors}}
+          <a href="/author/{{slug}}/" class="nom_auteur">{{name}}</a>{{#unless @last}}, {{/unless}}
+          {{/foreach}}
         </p>
-        {{/author}}
         <p class="card-tags">
           {{#if tags}}
           <i class="icon-label"></i> {{tags limit=1}}
