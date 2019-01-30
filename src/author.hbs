@@ -27,13 +27,12 @@
 				
 				<h2 class="title h3"><a href="{{url}}" class="disabledLink_p" onclick="redirect({{url}})">{{{title}}}</a></h2>
 				<div class="post-meta">
-					--{{authors}}--
-					{{#author}}
 					<span class="author">
 	                    <i class="fa fa-user"></i>
-	                    <a href="{{url}}">{{name}}</a>
+						{{#foreach authors}}
+						<a href="/author/{{slug}}/">{{name}}</a>{{#unless @last}}, {{/unless}}
+						{{/foreach}}
 	                </span>
-	                {{/author}}
 	                <span class="date">
 	                    <i class="fa fa-calendar-o"></i>
 	                    {{date format="MMM DD, YYYY"}}
