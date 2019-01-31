@@ -1,11 +1,10 @@
 {{!< default}} {{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
   <!-- {{> cover-tag}} -->
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
-    crossorigin="anonymous"></script>
+<div class="container container_page">
+  <div class="row row_page">
+    <div class="col-md-8">
 
-  <div class="container">
-    <div class="col-md-8 col-xs-12 tags-container">
       <div class="cover-wrap">
         <div class="meta-info pull-right">
           <span><i class="fa fa-signal fa-fw"></i>Total {{plural pagination.total empty='0 Post' singular='% Post'
@@ -25,3 +24,4 @@
 
     {{> sidebar_home}}
   </div>
+</div>
