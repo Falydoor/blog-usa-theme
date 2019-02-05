@@ -1,5 +1,10 @@
 *.zip
 .DS_Store
-src/assets/css/screen.css
 .sass-cache/
 *.map
+
+# generated CSS
+src/assets/css/*.map
+src/assets/css/style.css
+src/assets/css/screen.css
+src/assets/css/responsive.css
