@@ -1054,3 +1054,11 @@ p {
     color: #e42420 !important;
     font-weight: bold !important;
 }
+
+.post-info {
+    .post-title {
+        font-weight: 700;
+        color: #393939;
+        margin-block-start: 10px;
+    }
+}

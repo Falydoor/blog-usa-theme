@@ -235,7 +235,7 @@ var themeApp = {
 						}
 						string +='<div class="recent-single-post clearfix ' +helper_class+ '"><a href="' + link + '" class="post-title">\
 						'+ image +'\
-						<div class="post-info"><h4 class="h5">' + title + '</h4><div class="date"><i class="fa fa-calendar-o"></i>' + published_at + '</div></div>\
+						<div class="post-info"><div class="post-title">' + title + '</div><div class="date"><i class="fa fa-calendar-o"></i>' + published_at + '</div></div>\
 						</a></div>'
 					}
 				}
