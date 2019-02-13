@@ -1,5 +1,6 @@
 <aside class="col-md-4 slidebar_home">
 	<div class="sidebar">
+	{{#has tag="JHipster"}}{{> widget-tag-jhipster}}{{/has}}
 	{{#has tag="Apache Kafka"}}{{> widget-tag-kafka}}{{/has}}
 	{{> widget-newsletter}}
 	{{> widget-recentpost}}
