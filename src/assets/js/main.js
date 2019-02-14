@@ -325,7 +325,7 @@ var themeApp = {
 			var  search = JSON.parse(sessionStorage.getItem("search"));
 			$('#search-page-result ul').append(
 				$.map(search,function(value,index){
-					var image = value.image==null?"../../assets/images/ippon-bkr.png":value.image;
+					var image = value.image==null?"/assets/images/ippon-bkr.png":value.image;
 					return "<li><img src='"+image+"' alt='' /><a href='"+value.link+"'>"+value.title+"</a></li>";
 				}).join(" ")
 			);
