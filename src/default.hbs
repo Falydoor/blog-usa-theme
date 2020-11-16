@@ -30,7 +30,7 @@
   <meta name="google-site-verification" content="FzAj1Qvu2CxzBg1EEiofYpKD7LOwx9LaDr9jhQ7LOr8" />
   <meta name="google-site-verification" content="1DRl2R-D8Jra1e4TQf7xU2jFqhoRh_cW0b-6AnwXurQ" />
 </head>
-<body class="{{body_class}}" {{#if @blog.cover_image}} style="background-image: url({{@blog.cover_image}});"{{/if}}>
+<body class="{{body_class}}" {{#if @site.cover_image}} style="background-image: url({{@site.cover_image}});"{{/if}}>
   {{! insert header partial}}
   {{> header}}
   {{{body}}}
@@ -39,6 +39,7 @@
 
   <script id="dsq-count-scr" src="//http-blog-ippon-tech.disqus.com/count.js" async></script>
   <script src="{{asset "js/prism_Okaidia.js"}}" async></script> 
+  
 
 <script type="text/javascript">
   var isMobile = {

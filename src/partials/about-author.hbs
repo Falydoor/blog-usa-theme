@@ -1,8 +1,8 @@
 <!-- start about the author -->
-{{#author}}
+{{#primary_author}}
 <div class="about-author col-sm-12 clearfix">
 	{{#if profile_image}}
-		<a href="{{url}}" title="{{name}}"><img src="{{img_url profile_image}}" alt="Author image" class="avatar pull-left"></a>
+		<a href="{{url}}" title="{{name}}"><img src="{{profile_image}}" alt="Author image" class="avatar pull-left"></a>
 		{{else}}
 		<a href="{{url}}" title="{{name}}"><img src="{{asset "images/default-avatar.png"}}" alt="Author image" class="avatar pull-left"></a>
 	{{/if}}
@@ -25,5 +25,5 @@
 		</div>
 	</div>
 </div>
-{{/author}}
+{{/primary_author}}
 <!-- end about the author -->

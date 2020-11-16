@@ -8,8 +8,7 @@
 					<div class="col-sm-6 col-sm-offset-0 col-xs-10 col-xs-offset-1 footer_text" >
 						{{> widget-text}}
 					</div>
-					<div class="col-sm-4 col-sm-offset-0 pull-right col-xs-10 col-xs-offset-1 copyright">
-						 &copy; {{date format="YYYY"}} <a href="{{@blog.url}}" style="color:#b0b0b0;">IPPON</a>. All rights Reserved.
+					<div class="col-sm-4 col-sm-offset-0 pull-right col-xs-10 col-xs-offset-1 copyright"> &copy; {{date format="YYYY"}} <a href="{{@site.url}}" style="color:#b0b0b0;">IPPON</a>. All rights Reserved.
 					</div>
 				</div>
 			</div>
@@ -19,7 +18,16 @@
 <a href="#" id="back-to-top"><i class="fa fa-angle-up"></i></a>
 {{! insert search popup partial}}
 {{ghost_foot}}
-<script type="text/javascript">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="{{asset "js/bootstrap.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/custom.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/main.min.js"}}"></script>
+<script type="text/javascript" src="{{asset "js/custom.jquery.ghosthunter.min.js"}}" async></script>
+
+
+
+<script type="text/javascript" >
 /* * * DON'T EDIT BELOW THIS LINE * * */
 (function () {
     var s = document.createElement('script'); s.async = true;
@@ -28,11 +36,8 @@
     (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
 }());
 </script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="{{asset "js/bootstrap.min.js"}}"></script>
-<script src="{{asset "js/custom.min.js"}}"></script>
-<script src="{{asset "js/main.min.js"}}"></script>
-<script src="{{asset "js/jquery.ghostHunter.min.js"}}" async></script>
+
+
 
 <script type="text/javascript">
 $('.recommend_form').submit(function () {

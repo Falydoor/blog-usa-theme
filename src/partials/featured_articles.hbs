@@ -2,7 +2,7 @@
   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
   crossorigin="anonymous"></script>
   
-{{#get "posts" filter="featured:true" limit="3" include="author,tags"}}
+{{#get "posts" filter="featured:true" limit="3" include="authors,tags"}}
 <div class="main-container col-xs-12">
   <div class="card-columns1">
     {{#foreach posts}}
@@ -21,10 +21,11 @@
         <hr class="hr_card" />
 
         <div class="author-block">
-          <p class="card-date">
-            <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
-          </p>
-          {{#author}}
+          <div class="card-date">
+              <small class="text-muted">{{date format='MMM DD, YYYY'}}</small>
+              <span>{{reading_time}}</span>
+          </div>
+          {{#primary_author}}
           <a href="{{url}}">
             <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}assets/images/default-avatar.png{{/if}}" alt="{{name}}"
               class="pull-left img-author img-circle">
@@ -32,7 +33,7 @@
           <p class="card-text">
             <a href="{{url}}" class="nom_auteur">{{name}}</a>
           </p>
-          {{/author}}
+          {{/primary_author}}
           <p class="card-tags">
             {{#if tags}}
             <i class="icon-label"></i> {{tags limit=1}}

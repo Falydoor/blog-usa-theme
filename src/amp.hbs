@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html ⚡>
 <head>
+    {{!-- Document Settings --}}
     <meta charset="utf-8">
+
+    {{!-- Page Meta --}}
     <title>{{meta_title}}</title>
 
     {{!-- Mobile Meta --}}
@@ -10,7 +13,7 @@
 
     {{!-- Brand icon --}}
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-
+    
     {{amp_ghost_head}} 
     {{!--Font Lato---}}
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
@@ -821,10 +824,10 @@
     {{#post}}
     <header class="main-header">
        <!--  <nav class="blog-title">
-           <a href="{{@blog.url}}">{{@blog.title}}</a>
+           <a href="{{@site.url}}">{{@site.title}}</a>
        </nav> -->
        <div class="first_bar">
-           <a href="http://www.ippon.tech" class="logo_ippon"> <amp-img src="{{@blog.logo}}" width=125 height=46>  </amp-img></a>
+           <a href="http://www.ippon.tech" class="logo_ippon"> <amp-img src="{{@site.logo}}" width=125 height=46>  </amp-img></a>
            <ul class="con_ser">
                <li><a href="/contact"><amp-img src="{{asset "assets/images/amp_phone.svg"}}" width=20 height=20></amp-img></a></li>
                <li><a href="/m-search"><amp-img src="{{asset "assets/images/amp_search.svg"}}" width=20 height=20></amp-img></a></li>
@@ -840,9 +843,9 @@
             <header class="post-header">
                 <h1 class="post-title">{{title}}</h1>
                 <section class="post-meta">
-                    {{#author}}
-                    <p class="author">by <a href="{{url}}">{{name}}</a></p>
-                    {{/author}}
+                    {{#primary_author}}
+                        <p class="author">by <a href="{{url}}">{{name}}</a></p>
+                    {{/primary_author}}
                     <time class="post-date" datetime="{{date format="YYYY-MM-DD"}}">{{date format="YYYY-MM-DD"}}</time>
                 </section>
             </header>
@@ -864,7 +867,7 @@
 
     {{/post}}
     <footer class="site-footer clearfix">
-        <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+        <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
     </footer>
 </body>

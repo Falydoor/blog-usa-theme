@@ -63,7 +63,7 @@
 				this.field('title', {boost: 10})
 				this.field('description')
 				this.field('link')
-				this.field('markdown', {boost: 5})
+				//this.field('markdown', {boost: 5})
 				this.field('pubDate')
 				this.field('tag')
 				this.ref('id')
@@ -141,9 +141,9 @@
 						id 			: String(arrayItem.id),
 						title 		: String(arrayItem.title),
 						description	: String(arrayItem.meta_description),
-						markdown 	: String(arrayItem.markdown),
+						//markdown 	: String(arrayItem.markdown),
 						pubDate 	: String(arrayItem.created_at),
-						image 		: arrayItem.image==null?domain+"/assets/images/ippon-bkr.png":String(arrayItem.image),
+						image 		: arrayItem.feature_image == null ? domain + "/assets/images/ippon-bkr.png" :String(arrayItem.feature_image),
 						tag 		: category,
 						link 		: String(arrayItem.url)
 					}
@@ -152,7 +152,14 @@
 					var tempdate = prettyDate(parsedData.pubDate);
 
 					index.add(parsedData)
-					blogData[arrayItem.id] = {title: arrayItem.title, description: arrayItem.meta_description, pubDate: tempdate,image: arrayItem.image==null?domain+"/assets/images/ippon-bkr.png":String(arrayItem.image), link: arrayItem.url,tag: category};
+					blogData[arrayItem.id] = {
+						title: arrayItem.title, 
+						description: arrayItem.meta_description, 
+						pubDate: tempdate,
+						image: arrayItem.feature_image== null ? domain+ "/assets/images/ippon-bkr.png" : String(arrayItem.feature_image), 
+						link: arrayItem.url,
+						tag: category
+					};
 				});
 			});
 

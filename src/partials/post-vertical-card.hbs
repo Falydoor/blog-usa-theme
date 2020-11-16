@@ -21,14 +21,14 @@
         <hr/>
 
         <div class="col-xs-7 col-md-8 dp_margin_b author-block">
-          {{#author}}
+          {{#primary_author}}
           <a href="{{url}}">
             <img src="{{#if profile_image}}{{img_url profile_image}}{{else}}/assets/images/default-avatar.png{{/if}}" class="pull-left img-author img-circle">
           </a>
           <p class="card-text card-text-latest">
             <a href="{{url}}" class="nom_auteur">{{name}}</a>
           </p>
-          {{/author}}
+          {{/primary_author}}
           <span class="tags_container">
             {{#if tags}}
             <i class="icon-label"></i> {{tags limit=1}}

@@ -1,8 +1,35 @@
 {
-	"name" : "blog-ippon",
-	"version": "3.1.0",
-	"author": {"email": "aseigneurin@ippon.tech"},
+	"name" : "blog-ippon-ghost-theme-us",
+	"version": "4.0.6",
+	"author": {
+		"name":"Alexis Seigneurin",
+		"email": "aseigneurin@ippon.tech"
+	},
+	"contributors": [
+		{
+			"name": "Mariam Sabil",
+			"email": "msabil@ippon.tech"
+		},
+		{
+			"name": "Nabil Benhammou",
+			"email": "nbenhammou@ippon.tech"
+		},
+		{
+			"name": "Ahmed Msouber",
+			"email": "amsouber@ippon.tech"
+		}
+	],
 	"config": {
         "posts_per_page": 15
+    },
+    "engines": {
+        "ghost-api": "v2"
+    },
+    "keywords": [
+        "ghost",
+        "theme",
+        "ghost-theme"
+    ],
+    "dependencies": {
     }
 }

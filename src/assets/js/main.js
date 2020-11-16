@@ -7,218 +7,46 @@
 /*===========================
  1. function declearetion
  ==========================*/
+
+/*const api = new GhostContentAPI({
+	url: 'http://localhost:2368',
+	key: '1aceca97f51b3144b17f6d89a6',
+	version: "v3"
+});*/
+
+
 var themeApp = {
 
-	setNavbar: function() {
-		if(typeof fixed_navbar != "undefined" && fixed_navbar == true) {
+	setNavbar: function () {
+		if (typeof fixed_navbar != "undefined" && fixed_navbar == true) {
 			$('#main-navbar').addClass('navbar-fixed-top');
 			$('body').addClass('has-fixed-navbar');
 		}
 	},
 
-	latestSlider: function() {
-		var latest = $("#title-slider");
-		var latestPost;
-		if(latest.length && typeof Latest_slider_post_count !== 'undefined') {
-			var string = '';
-			$.get(ghost.url.api('posts', {include:"tags", limit: Latest_slider_post_count})).done(function (data){
-				latestPost = data.posts;
-				if (latestPost.length > 0) {
-					for(i = 0; i< latestPost.length ; i++) {
-						var title = latestPost[i].title;
-						var link = latestPost[i].url;						
-						var tags = latestPost[i].tags;
-						var tag_link = '';
-						for(j = 0; j< tags.length ; j++) {
-							var tag_name = tags[j].name;
-							var tag_slug = tags[j].slug;
-							tag_link += '<a class="tagged-in" href="/tag/'+tag_slug+'/">'+tag_name+'</a>';
-						}
-						string +='<div class="item">\
-								'+tag_link+'\
-								<a href="'+link+'" class="heading" title="'+title+'">'+title+'</a>\
-							</div>';
-					}
-					latest.append(string);
-				}
-			}).fail(function (err){
-				console.log(err);
-			});
-		}
+	formatDate: function (dt) {
+		var d = new Date(dt);
+		var month_name = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+		var month = month_name[d.getMonth()];
+		var date = d.getDate();
+		var year = d.getFullYear();
+		var formatted_dt = month + ' ' + date + ',' + ' ' + year;
+		return formatted_dt;
 	},
 
-	specialPostsSetOne: function(data){
-		if($('#category-container').length && typeof special_tag_one !== 'undefined' && typeof tag_one_post_count !== 'undefined') {
-			var filteredPosts;
-			special_tag_one = special_tag_one.toLowerCase();
-			$.get(ghost.url.api('posts', {filter:"tags:["+special_tag_one+"]", include:"tags", limit: tag_one_post_count})).done(function (data){
-				filteredPosts = data.posts;
-				var string = '';
-				if (filteredPosts.length > 0) {
-					string = '<div class="category-wrap" id="category-type-one">\
-						<h2 class="h4 category-name"><span>'+special_tag_one+'</span></h2>\
-						<div class="row default-layout">';
-					for(i = 0; i< filteredPosts.length ; i++) {
-						if( i < tag_one_post_count) {
-							var title = filteredPosts[i].title;
-							var link = filteredPosts[i].url;
-							var image_link = filteredPosts[i].image;
-							var tags = filteredPosts[i].tags;
-							var published_at = themeApp.formatDate(filteredPosts[i].published_at);
-							var content = $(filteredPosts[i].html).text().replace("<code>", "&lt;code&gt;").replace("<", "&lt;").replace(">", "&gt;");
-							var content = content.split(/\s+/).slice(0,50).join(" ");
-							var featured_media = '';
-							var tag_link = '';
-							for(j = 0; j< tags.length ; j++) {
-								var tag_name = tags[j].name;
-								var tag_slug = tags[j].slug;
-								tag_link += '<a href="/tag/'+tag_slug+'/">'+tag_name+'</a>';
-							}
-							if (image_link !== null) {
-								featured_media = '<div class="featured-media">\
-										<a href="'+link+'" title="'+title+'">\
-											<div class="image-container" style="background-image: url('+image_link+');">\
-											</div>\
-										</a>\
-										<div class="tag-list">'+tag_link+'</div>\
-									</div>';
-							} else {
-								featured_media = '<div class="featured-media">\
-										<div class="tag-list">'+tag_link+'</div>\
-									</div>';
-							}
-							string += '<!-- start post -->\
-								<article class="col-sm-6 post-wrap">\
-								'+featured_media+'\
-									<h2 class="title h3"><a href="'+link+'">'+title+'</a></h2>\
-									<div class="post-meta">\
-			                            <span class="date">\
-			                                <i class="fa fa-calendar-o"></i>&nbsp;' + published_at + '\
-			                            </span>\
-			                            <span class="comment">\
-			                                <i class="fa fa-comment-o"></i>\
-			                                <a href="'+link+'#disqus_thread">0 Comments</a>\
-			                            </span>\
-									</div>\
-									<div class="post-entry">'+content+'</div>\
-									<a class="permalink" href="'+link+'">Read More...</a>\
-								</article>\
-								<!-- end post -->';
-						}
-					}
-					string += '</div></div>';
-					$("#category-container").append(string);
-					themeApp.commentCount();
-				}
-			}).fail(function (err){
-				console.log(err);
-			});
-		}
-	},
-
-	specialPostsSetTwo: function(data) {
-		if($('#category-container').length && typeof special_tag_two !== 'undefined' && typeof tag_two_post_count !== 'undefined') {
-			var filteredPosts;
-			special_tag_two = special_tag_two.toLowerCase();
-			$.get(ghost.url.api('posts', {filter:"tags:["+special_tag_two+"]", include:"tags", limit: tag_one_post_count})).done(function (data){
-				filteredPosts = data.posts;
-				var string = '';
-				if (filteredPosts.length > 0) {
-					string = '<div class="category-wrap">\
-						<h2 class="h4 category-name"><span>'+special_tag_two+'</span></h2>\
-						<div class="row default-layout">'
-					for(i = 0; i< filteredPosts.length ; i++) {
-						if( i < tag_two_post_count) {
-							var title = filteredPosts[i].title;
-							var link = filteredPosts[i].url;
-							var image_link = filteredPosts[i].image;
-							var tags = filteredPosts[i].tags;
-							var published_at = themeApp.formatDate(filteredPosts[i].published_at);
-							var content = $(filteredPosts[i].content).text().replace("<code>", "&lt;code&gt;").replace("<", "&lt;").replace(">", "&gt;");
-							var content = content.split(/\s+/).slice(0,50).join(" ");
-							var featured_media = '';
-							var featured_media_small = '';
-							var post_class = '';
-							var category_link = '';
-							var tag_link = '';
-							for(j = 0; j< tags.length ; j++) {
-								var tag_name = tags[j].name;
-								var tag_slug = tags[j].slug;
-								tag_link += '<a href="/tag/'+tag_slug+'/">'+tag_name+'</a>';
-							}
-							if ( image_link !== null) {
-								featured_media = '<div class="featured-media">\
-										<a href="'+link+'">\
-											<div class="image-container" style="background-image: url('+image_link+');">\
-											</div>\
-										</a>\
-										<div class="tag-list">'+tag_link+'</div>\
-									</div>';
-								featured_media_small = '<div class="featured-media">\
-										<a href="'+link+'">\
-											<div class="image-container" style="background-image: url('+image_link+');">\
-											</div>\
-										</a>\
-									</div>';
-							} else {
-								post_class = 'no-image';
-							}
-							if(i == 0) {
-								string += '<!-- start post -->\
-									<article class="col-sm-6 post-wrap">\
-									'+featured_media+'\
-										<h2 class="title h3"><a href="'+link+'">'+title+'</a></h2>\
-										<div class="post-meta">\
-				                            <span class="date">\
-				                                <i class="fa fa-calendar-o"></i>&nbsp;'+published_at+'\
-				                            </span>\
-				                            <span class="comment">\
-				                                <i class="fa fa-comment-o"></i>\
-				                                <a href="'+link+'#disqus_thread">0 Comments</a>\
-				                            </span>\
-										</div>\
-										<div class="post-entry">'+content+'</div>\
-										<a class="permalink" href="'+link+'">Read More...</a>\
-									</article>\
-									<!-- end post -->';
-							} else {
-								string +='<!-- start post -->\
-							<article class="col-sm-6 post-wrap small-entry '+post_class+' clearfix">\
-								'+featured_media_small+'\
-								<div class="post-details">\
-								<div class="tag-list">'+tag_link+'</div>\
-									<h2 class="title h5"><a href="'+link+'">'+title+'</a></h2>\
-									<div class="post-meta">\
-			                            <span class="date">\
-			                                <i class="fa fa-calendar-o"></i>&nbsp;'+published_at+'\
-			                            </span>\
-			                            <span class="comment">\
-			                               <i class="fa fa-comment-o"></i>\
-				                                <a href="'+link+'#disqus_thread">0 Comments</a>\
-			                            </span>\
-									</div>\
-								</div>\
-							</article>\
-							<!-- end post -->';
-							}
-						}
-					}
-					string += '</div></div>';
-					$('#category-container').append(string);
-					themeApp.commentCount();
-				}
-			}).fail(function (err){
-				console.log(err);
-			});
-		}
-	},
-
-	recentPosts: function(data) {
+	recentPosts: function (data) {
 		var container = $(".recent-post");
 		var recentPost;
 		if(container.length && typeof recent_post_count !== 'undefined') {
-			$.get(ghost.url.api('posts', {limit: recent_post_count})).done(function (data){
-				recentPost = data.posts;
+			if(api) {
+				api.posts
+				.browse({
+				limit: recent_post_count,
+				include: 'tags,authors'
+				})
+				.then((posts) => {
+				console.log(posts);
+				recentPost = posts;
 				var string = '';
 				if (recentPost.length > 0) {
 					for(i = 0; i< recentPost.length ; i++) {
@@ -240,9 +68,12 @@ var themeApp = {
 					}
 				}
 				container.append(string);
-			}).fail(function (err){
-				console.log(err);
-			});
+				})
+				.catch((err) => {
+					console.error(err);
+				});
+			}
+		
 		}
 	},
 
@@ -254,6 +85,10 @@ var themeApp = {
 		var year = d.getFullYear();
 		var formatted_dt = month+' '+date+','+' '+year;
 		return formatted_dt;
+	},
+
+	responsiveIframe: function() {
+		$('.full-post').fitVids();
 	},
 
 	featuredMedia: function(){
@@ -274,10 +109,6 @@ var themeApp = {
 				}
 			});
 		}
-	},
-
-	responsiveIframe: function() {
-		$('.full-post').fitVids();
 	},
 
 	commentCount: function () {
@@ -349,9 +180,9 @@ var themeApp = {
 	
 	init:function(){
 		themeApp.setNavbar();
-		themeApp.latestSlider();
-		themeApp.specialPostsSetOne();
-		themeApp.specialPostsSetTwo();
+		//themeApp.latestSlider();
+		//themeApp.specialPostsSetOne();
+		//themeApp.specialPostsSetTwo();
 		themeApp.recentPosts();
 		themeApp.facebook();
 		themeApp.featuredMedia();
